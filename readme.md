@@ -1,4 +1,4 @@
-# ParanoidAndroid #
+# MerkOS #
 
 ## Working on translations ##
 
@@ -34,7 +34,7 @@ $ cd WORKSPACE
 
 # Install Repo in the created directory
 # Use a real name/email combination, if you intend to submit patches
-$ repo init -u https://github.com/AOSPA/manifest -b lollipop-mr1
+$ repo init -u https://github.com/merkos/manifest -b lp5.1
 ```
 
 ### Downloading the source tree ###
@@ -58,7 +58,7 @@ a large change that spans across multiple projects.
 ```bash
 # Specify one or more projects by either name or path
 
-# For example, enter AOSPA/android_frameworks_base or
+# For example, enter merkos/android_frameworks_base or
 # frameworks/base to sync the frameworks/base repository
 
 $ repo sync PROJECT
@@ -81,8 +81,6 @@ $ ./rom-build.sh DEVICE
 
 We're open source and patches are always welcome!
 
-You can see the status of all patches at [Gerrit Code Review](https://gerrit.paranoidandroid.co/).
-
 ### Following the standard workflow ###
 
 ```bash
@@ -90,8 +88,8 @@ You can see the status of all patches at [Gerrit Code Review](https://gerrit.par
 $ cd WORKSPACE
 
 # Create a new branch on the specific project you are going to work on
-# For example, `repo start fix-clock AOSPA/android_frameworks_base`
-$ repo start BRANCH AOSPA/PROJECT
+# For example, `repo start fix-clock merkos/android_frameworks_base`
+$ repo start BRANCH merkos/PROJECT
 
 # Go inside the project you are working on
 $ cd PROJECT
@@ -105,25 +103,8 @@ $ git commit -a
 
 # Upload your changes
 $ cd WORKSPACE
-$ repo upload AOSPA/PROJECT
+$ repo upload merkos/PROJECT
 ```
-### Using plain git to upload ###
-
-```bash
-# Go inside the project you are working on
-$ cd PROJECT
-
-# Make your changes
-...
-
-# Commit all your changes
-$ git add -A
-$ git commit -a
-
-# Upload your changes
-$ git push ssh://USERNAME@gerrit.paranoidandroid.co:29418/AOSPA/PROJECT HEAD:refs/for/lollipop-mr1
-```
-
 ### Making additional changes ###
 
 If you are going to make more changes, you just have to repeat the steps (except for `repo start`
@@ -158,16 +139,5 @@ License 2.0 allows a variety of actions on the content as long as licensing and 
 notices are retained and included with the code and your changes to the codebase are stated.
 
 You can read the full license text at http://www.apache.org/licenses/LICENSE-2.0
-
-### Images & other assets ###
-
-Unless otherwise specified, all out assets, including but not limited to images, are licensed
-under Creative Commons Attribution-NonCommercial 4.0 International, or CC BY-NC 4.0 for short.
-This means that you are allowed to modify the aforementioned assets in any way you want and
-you are free to share the originals and/or the modified work. However, you are not allowed
-to use the assets for commercial purposes and you must provide attribution at all times which
-means you have to include a short note about the license used (CC BY-NC 4.0), the original
-author/authors (Paranoid Android Project or AOSPA) and inform about any changes that have been
-made. A link to the [website](http://aospa.co/) should usually be included as well.
 
 You can reach the full legal text at http://creativecommons.org/licenses/by-nc/4.0/
